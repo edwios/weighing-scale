@@ -1,5 +1,5 @@
-weighing-scale
-==============
+Connected weigh scale
+=====================
 
 Source code for a Spark Core to read from a weigh scale, display the result on an and OLED display and optionally upload the result to the cloud.
 
@@ -9,3 +9,4 @@ The output of the ADC is read by the Spark Core and in turn displayed on a small
 
 Optionally, the measured data can be uploaded to the cloud for other purposes, such as Thingspeak.com for charting (included as sample in source), or pushingbox.com for alerts.
 
+Details please see <a href="http://blog.l3l4.com/iot/kitchenscale01/">Conneting a Weigh Scale</a>
