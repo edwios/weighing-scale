@@ -8,8 +8,11 @@
 set ACCESS_TOKEN to "<<Access_token>>"
 set myCores to {"Weigh scale", "Some other core"}
 set CoreIDList to {{key:"Weigh scale", value:"<<CoreID>>"}, {key:"Some other core", value:"<<CoreID>>"}}
-set ans to {choose from list myCores}
-if ans then
+choose from list myCores with title "Which Core?" with prompt "Pick the weighing scale Core, Cancel to abort."
+if the result is false then
+	return
+else
+	set ans to the result
 	set selectedCore to ans as text
 	repeat with theCore in CoreIDList
 		if (key of theCore) as text is equal to selectedCore then
@@ -27,4 +30,3 @@ if ans then
 	do shell script "curl -d access_token=" & ACCESS_TOKEN & " -d " & theParams & " " & quoted form of theURL
 	
 end if
-
